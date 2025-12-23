@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import SchoolCard from '../components/SchoolCard';
 import Link from 'next/link';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://mejoresescuelasmexico.infinitecmexico.com/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://mejoresescuelasmexico.infinitecmexico.com/api';
 
 export default function SchoolsPage() {
   const router = useRouter();

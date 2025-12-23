@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from 'next/link';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://mejoresescuelasmexico.infinitecmexico.com/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://mejoresescuelasmexico.infinitecmexico.com/api';
 
 export default function RankingPage({ schools = [], rankingType = '', city = '', level = null, isPrivate = null, error = null }) {
   const router = useRouter();
