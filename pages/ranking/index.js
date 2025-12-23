@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from 'next/link';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://mejoresescuelasmexico.infinitecmexico.com/api';
 
 export default function RankingPage({ schools = [], rankingType = '', city = '', level = null, isPrivate = null, error = null }) {
   const router = useRouter();
@@ -241,7 +241,7 @@ export async function getServerSideProps({ params }) {
 
     // Build query string
     const queryString = new URLSearchParams(query).toString();
-    const apiUrl = `http://localhost:5000/api/ranking?${queryString}`;
+    const apiUrl = `${API_URL}/ranking?${queryString}`;
     
     console.log('Fetching from:', apiUrl);
     

@@ -5,7 +5,7 @@ import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import Link from 'next/link';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://mejoresescuelasmexico.infinitecmexico.com/api';
 
 export default function RankingPage({ schools, rankingType, city, level, isPrivate }) {
   const router = useRouter();
@@ -257,7 +257,7 @@ export async function getStaticProps({ params }) {
 
     // Fetch from API (or you can query MongoDB directly)
     const queryString = new URLSearchParams(query).toString();
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/ranking?${queryString}`);
+    const response = await fetch(`${API_URL}/ranking?${queryString}`);
     
     if (!response.ok) {
       return { notFound: true };
@@ -284,7 +284,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   try {
     // Get all cities from database
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/schools`);
+    const response = await fetch(`${API_URL}/schools`);
     const schools = await response.json();
     const cities = [...new Set(schools.map(s => s.city))];
 
