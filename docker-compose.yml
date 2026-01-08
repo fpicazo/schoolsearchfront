@@ -8,7 +8,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000 
-      - NEXT_PUBLIC_API_URL=http://mejoresescuelasmexico.infinitecmexico.com/api
+      - NEXT_PUBLIC_API_URL=https://mejoresescuelasmexico.infinitecmexico.com/api
     networks:
       - shared-network
 
