@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: https://mejoresescuelasmexico.infinitecmexico.com/api
     container_name: nextapp
     restart: unless-stopped
     environment:
