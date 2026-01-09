@@ -372,11 +372,17 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   try {
-    const schools = await getAllSchools();
 
-    const paths = schools.map(school => ({
+    const schools = await getAllSchools();
+    console.log('getStaticPaths: schools =', schools);
+
+    // Filter out schools without a valid slug
+    const validSchools = schools.filter(school => typeof school.slug === 'string' && school.slug.length > 0);
+
+    const paths = validSchools.map(school => ({
       params: { slug: school.slug },
     }));
+    console.log('getStaticPaths: paths =', paths);
 
     return {
       paths,
